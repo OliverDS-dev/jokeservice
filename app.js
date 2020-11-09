@@ -13,5 +13,9 @@ mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_re
         res.write("Amanda Leighton Schjoedt er en cutie\n");
         res.end();
     }).listen(port);
+
+    http.get('/test', function(req, res) {
+        res.send('Penis');
+    });
     
     console.log("Listening on the port " + port + "...");
