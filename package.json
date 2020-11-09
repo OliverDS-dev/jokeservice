@@ -21,6 +21,7 @@
     "heroku": "^7.47.0",
     "http": "0.0.1-security",
     "mocca": "^1.0.3",
+    "mongoose": "^5.10.13",
     "pug": "^3.0.0",
     "should": "^13.2.3"
   }
