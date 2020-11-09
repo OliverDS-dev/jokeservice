@@ -3,6 +3,7 @@ let http = require('http');
 let express = require('express');
 const app = express();
 app.set('view engine', 'pug');
+const config = require('./config');
 
 // mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
 //     { useNewUrlParser: true, useUnifiedTopology: true });
@@ -12,8 +13,13 @@ app.set('view engine', 'pug');
     app.get('/', function(req, res){
         res.send('weenis')
     })
+    
     app.get('/test', function(req, res) {
         res.send('nenis');
     });
-    app.listen(port, ()=>{  console.log("Listening on the port " + port + "...");})
+
+    //Routes
+    const jokeRouter = require('./routes/jokes');
+
+    app.listen(config.PORT, ()=>{  console.log("Listening on the port " + port + "...");})
  
