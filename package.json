@@ -1,0 +1,27 @@
+{
+  "name": "jokeservice",
+  "version": "0.0.1",
+  "description": "desc",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OliverDS-dev/jokeservice.git"
+  },
+  "author": "Oliver, Denis, Anders, Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OliverDS-dev/jokeservice/issues"
+  },
+  "homepage": "https://github.com/OliverDS-dev/jokeservice#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "heroku": "^7.47.0",
+    "http": "0.0.1-security",
+    "mocca": "^1.0.3",
+    "pug": "^3.0.0",
+    "should": "^13.2.3"
+  }
+}
