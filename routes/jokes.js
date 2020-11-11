@@ -4,5 +4,5 @@ const controller = require('../controller/jokeController');
 
 router.get('/api/jokes', async(req, res) =>{
     const jokes = await controller.getJokes();
-    res.render('frontPage', {title : 'Great Jokes'})
+    res.render('jokes', {title : 'Great Jokes'})
 })
