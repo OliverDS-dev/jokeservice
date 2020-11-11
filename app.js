@@ -10,7 +10,7 @@ app.set('view engine', 'pug');
     // process.env.PORT lets the port be set by heruko
     let port = process.env.PORT || 8080;
     app.get('/', function(req, res){
-        res.send('weenis')
+        res.render('frontpage');
     })
     
     app.get('/test', function(req, res) {
