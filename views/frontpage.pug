@@ -1,7 +1,16 @@
-html
-    header
-        link(rel='stylesheet', href='./styles/frontpagecss.css', type='text/css')
-        h1 Frontpage test
+html(lang='dk')
+    head
+        style
+            include ../styles/FPStyle.css
+        title Cuhrazy Hamburgarh
+        h1 DAVO Joke Service
     body
-        div Hope this works
-        div it did
+        h3 Se alle vores sjove jokes
+        form(action='/SeEgneJokes' method='get')
+            button(type='button' name=sejokes) Se vores jokes 
+        h3 Se links til andre folks sjove jokes
+        form(action='/lavjokes' method='get')
+            button(type='button' name=lavjokes) Se links
+        h3 Se andre folks sjove jokes
+        form(action='/seAndreJokes' method='get')
+            button(type='button' name=lavjokes) Se andre folks sjove jokes   
