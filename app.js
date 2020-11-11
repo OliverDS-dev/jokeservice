@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
-let http = require('http');
-let express = require('express');
+const http = require('http');
+const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.set('view engine', 'pug');
 
 // mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
@@ -16,6 +19,10 @@ app.set('view engine', 'pug');
     app.get('/test', function(req, res) {
         res.send('nenis');
     });
+
+    app.get('/api/othersites', function(req, res){
+        res.render('othersites');
+    })
 
     //Routes
     // const jokeRouter = require('./routes/jokes');
