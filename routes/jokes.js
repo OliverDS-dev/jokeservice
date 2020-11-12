@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require('../controller/jokeController');
 const jokeModel = require('../model/joke');
 
-router.get('/api/jokes', async (request, response) => {
+router.get('/jokes', async (request, response) => {
     try {
         const jokelist = await jokeModel.find({})
         response.render('jokes', { jokelist: jokelist })
@@ -12,8 +12,13 @@ router.get('/api/jokes', async (request, response) => {
     }
 })
 
+router.get('/api/jokes', async (request, response) => {
+    const jokelist = await jokeModel.find({})
+        response.send(JSON.stringify(jokelist));
+})
+
 // Poster en ny joke
-router.post('/api/jokes', async (request, response) => {
+router.post('/jokes', async (request, response) => {
     const setup = request.body.setup;
     const punchline = request.body.punchline;
     const newJoke = new jokeModel({ setup: setup, punchline: punchline })

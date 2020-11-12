@@ -6,9 +6,6 @@ body {
     background-color: gainsboro
 }
 
-table{
-    border-style: solid;
-}
 td {
     border-style: inset;
     margin-right: 10 px;
