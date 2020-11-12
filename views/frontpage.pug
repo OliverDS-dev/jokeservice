@@ -6,11 +6,14 @@ html(lang='dk')
         h1 DAVO Joke Service
     body
         h3 Se alle vores sjove jokes
-        form(action='/SeEgneJokes' method='get')
-            button(type='button' name=sejokes) Se vores jokes 
+            div
+                a(href='/jokes')
+                    button Se vores jokes 
         h3 Se links til andre folks sjove jokes
-        form(action='/lavjokes' method='get')
-            button(type='button' name=lavjokes) Se links
+            div
+                a(href='/api/othersites')
+                    button Se links
         h3 Se andre folks sjove jokes
-        form(action='/seAndreJokes' method='get')
-            button(type='button' name=lavjokes) Se andre folks sjove jokes   
+            div
+                a(href='/api/otherjokes')
+                    button Se andre folks sjove jokes   

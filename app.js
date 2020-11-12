@@ -16,13 +16,16 @@ app.set('view engine', 'pug');
         res.render('frontpage');
     })
     
-    app.get('/test', function(req, res) {
-        res.send('nenis');
+    app.get('/jokes', function(req, res) {
+        res.render('jokes');
+    });
+    app.get('/api/otherjokes', function(req, res) {
+        res.render('otherjokes');
     });
 
     app.get('/api/othersites', function(req, res){
         res.render('othersites');
-    })
+    });
 
     //Routes
     // const jokeRouter = require('./routes/jokes');
