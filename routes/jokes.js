@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controller/jokeController');
+const jokeModel = require('../model/joke');
 
 router.get('/api/jokes', async(req, res) =>{
-    const jokes = await controller.getJokes();
+    const jokes = await jokeModel.find({});
     res.render('jokes', {title : 'Great Jokes'}, {jokeList : jokes})
 });
 
@@ -18,3 +19,5 @@ router.post('/api/jokes', async(req, res) => {
     controller.createJoke(req.params.setup, req.params.punchline);
     res.render('jokes', {title : 'Great Jokes'}, {jokeList : jokes});
 })
+
+module.exports = router;

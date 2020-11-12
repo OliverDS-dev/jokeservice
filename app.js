@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.set('view engine', 'pug');
 
-mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/erebus?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/Jokes?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true
   });
 // mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
@@ -19,9 +19,9 @@ mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/
         res.render('frontpage');
     })
     
-    app.get('/jokes', function(req, res) {
-        res.render('jokes');
-    });
+    // app.get('/jokes', function(req, res) {
+    //     res.render('jokes');
+    // });
     app.get('/api/otherjokes', function(req, res) {
         res.render('otherjokes');
     });
@@ -31,6 +31,8 @@ mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/
     });
 
     //Routes
-    // const jokeRouter = require('./routes/jokes');
+    const jokeRouter = require('./routes/jokes.js');
+    app.use(jokeRouter);
+
     app.listen(port, ()=>{  console.log("Listening on the port " + port + "...");});
  
