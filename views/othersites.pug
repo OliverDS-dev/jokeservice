@@ -2,6 +2,12 @@ html
     Header
         h1 Other sites with good and bad jokes
     body
-        div
-            each site in respons
-                li= site
+        table
+            tr
+                th Site
+            each otherSite in registryUrl
+                if(otherSite.name)
+                    tr
+                        td 
+                            a(href=otherSite.address) #{otherSite.name}
+                            

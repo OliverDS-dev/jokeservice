@@ -3,4 +3,17 @@ html
     head
         h1 Jokes
     body
-        li #{jokeList}
+        form(action="/api/jokes", method="post")
+            label Setup
+            input(type="text", name="setup")
+            br
+            label Punchline
+            input(type="text", name="punchline")
+            br
+            button(type="submit") Submit joke
+        br
+        table
+         each joke in jokelist
+            tr
+                td #{joke.setup}
+                td#punchline #{joke.punchline}

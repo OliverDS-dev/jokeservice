@@ -26,13 +26,15 @@ mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/
         res.render('otherjokes');
     });
 
-    app.get('/api/othersites', function(req, res){
-        res.render('othersites');
-    });
+    // app.get('/api/othersites', function(req, res){
+    //     res.render('othersites');
+    // });
 
     //Routes
-    const jokeRouter = require('./routes/jokes.js');
+    const jokeRouter = require('./routes/jokes');
+    const otherSiteRouter = require('./routes/otherSites');
     app.use(jokeRouter);
+    app.use(otherSiteRouter);
 
     app.listen(port, ()=>{  console.log("Listening on the port " + port + "...");});
  
