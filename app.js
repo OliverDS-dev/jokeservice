@@ -7,6 +7,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.set('view engine', 'pug');
 
+mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/erebus?retryWrites=true&w=majority', {
+    useNewUrlParser: true, useUnifiedTopology: true
+  });
 // mongoose.connect('mongodb://registry:dip999@ds042459.mlab.com:42459/krdo_joke_registry',
 //     { useNewUrlParser: true, useUnifiedTopology: true });
 
