@@ -1,15 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const link = "https://krdo-joke-registry.herokuapp.com/api/services";
+const fetch = require('node-fetch');
+let registryUrl = 'https://krdo-joke-registry.herokuapp.com/api/services';
 
-router.get('/api/othersites', async (req, res)=>{
+async function get(url) {
+    const respons = await fetch(url);
+    if (respons.status !== 200) // OK
+        throw new Error(respons.status);
+    return await respons.json();
+}
 
-    let site = {
-        id: req.body.id,
-        address: req.body.address,
-        name: req.body.name
+async function main(url) {
+    try {
+        let respons = await get(url);
+        console.log(respons);
+        console.log(respons.length);
+    } catch (fejl) {
+        console.log(fejl);
     }
-    let sites = {};
-    res.render('othersites', {title: "Andre sider med jokes", })
-})
-
+}
+main(registryUrl);
