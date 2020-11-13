@@ -22,9 +22,9 @@ mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/
     // app.get('/jokes', function(req, res) {
     //     res.render('jokes');
     // });
-    app.get('/api/otherjokes', function(req, res) {
-        res.render('otherjokes');
-    });
+    // app.get('/api/otherjokes', function(req, res) {
+    //     res.render('otherjokes');
+    // });
 
     // app.get('/api/othersites', function(req, res){
     //     res.render('othersites');

@@ -2,9 +2,16 @@ html(lang='dk')
     head
         style
             include ../styles/FPStyle.css
-        h1 huge gogalog
+        h1 Tryk på et link for at få dens jokes
     body
-        div penbis
+        table
+                th Jokes
+                    each joke in jokelist
+                     tr
+                        td #{joke.setup}
+                        td#punchline #{joke.punchline}
+
+        //- div penbis
         //- table
         //-  each joke in jokelist
         //-     tr
