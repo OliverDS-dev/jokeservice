@@ -33,8 +33,10 @@ mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/
     //Routes
     const jokeRouter = require('./routes/jokes');
     const otherSiteRouter = require('./routes/otherSites');
+    const otherJokesRouter = require('./routes/otherJokes')
     app.use(jokeRouter);
     app.use(otherSiteRouter);
+    app.use(otherJokesRouter);
 
     app.listen(port, ()=>{  console.log("Listening on the port " + port + "...");});
  
