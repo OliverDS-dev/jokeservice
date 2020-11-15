@@ -1,0 +1,26 @@
+header {
+    background-color:brown;
+}
+
+body {
+    background-color: brown;
+}
+
+td {
+    border-style: inset;
+    margin-right: 10 px;
+    border-collapse: collapse;
+    border-color: brown;
+    background-color:coral;
+}
+
+label{
+    display: inline-block;
+    text-align: right;
+}
+
+input{
+    margin-top: auto;
+    background-color: azure;
+    display: inline-block;
+}

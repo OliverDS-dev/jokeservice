@@ -12,11 +12,6 @@ router.get('/jokes', async (request, response) => {
     }
 })
 
-router.get('/api/jokes', async (request, response) => {
-    const jokelist = await jokeModel.find({})
-        response.send(JSON.stringify(jokelist));
-})
-
 // Poster en ny joke
 router.post('/jokes', async (request, response) => {
     const setup = request.body.setup;

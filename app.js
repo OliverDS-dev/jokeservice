@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 const http = require('http');
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 app.set('view engine', 'pug');
 
 mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/Jokes?retryWrites=true&w=majority', {
@@ -19,12 +16,10 @@ mongoose.connect('mongodb+srv://joker:cqwNfOUXXNADTpRr@erebus.84dlo.mongodb.net/
     //Routes
     const jokeRouter = require('./routes/jokes');
     const otherSiteRouter = require('./routes/otherSites');
+    const apiRouter = require('./routes/api');
     app.use(jokeRouter);
     app.use(otherSiteRouter);
-
-    const fetch = require('node-fetch');
-let registryUrl = 'https://krdo-joke-registry.herokuapp.com/api/services';
-
+    app.use(apiRouter);
 
     app.listen(port, ()=>{  console.log("Listening on the port " + port + "...");});
  
